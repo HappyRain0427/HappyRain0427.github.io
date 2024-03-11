@@ -8,35 +8,15 @@
     <link href="/2024/03/09/Magnolia/"/>
     <url>/2024/03/09/Magnolia/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h6 id="FOREWORD："><a href="#FOREWORD：" class="headerlink" title="FOREWORD："></a><em><strong>FOREWORD：</strong></em></h6><span id="more"></span><h3 id="抵达"><a href="#抵达" class="headerlink" title="抵达"></a>抵达</h3><center><img src="1.jpg" srcset="/img/loading.gif" lazyload width = "60%" /><img src="2.jpg" srcset="/img/loading.gif" lazyload width = "60%" /></center>]]></content>
     
     
     
-  </entry>
-  
-  
-  
-  <entry>
-    <title>闪击成都</title>
-    <link href="/2024/03/07/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/"/>
-    <url>/2024/03/07/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>坂本龙一：一音一时</title>
-    <link href="/2024/03/07/%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%EF%BC%9A%E4%B8%80%E9%9F%B3%E4%B8%80%E6%97%B6/"/>
-    <url>/2024/03/07/%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%EF%BC%9A%E4%B8%80%E9%9F%B3%E4%B8%80%E6%97%B6/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
+    <tags>
+      
+      <tag>玉兰花</tag>
+      
+    </tags>
     
   </entry>
   
@@ -158,6 +138,50 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>闪击成都</title>
+    <link href="/2023/09/24/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/"/>
+    <url>/2023/09/24/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/</url>
+    
+    <content type="html"><![CDATA[<h6 id="FOREWORD："><a href="#FOREWORD：" class="headerlink" title="FOREWORD："></a><em><strong>FOREWORD：</strong></em></h6><span id="more"></span><h3 id="抵达"><a href="#抵达" class="headerlink" title="抵达"></a>抵达</h3><center><img src="1.jpg" srcset="/img/loading.gif" lazyload width = "60%" /><img src="2.jpg" srcset="/img/loading.gif" lazyload width = "60%" /></center>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>成都</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>坂本龙一：一音一时</title>
+    <link href="/2023/09/23/%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%EF%BC%9A%E4%B8%80%E9%9F%B3%E4%B8%80%E6%97%B6/"/>
+    <url>/2023/09/23/%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%EF%BC%9A%E4%B8%80%E9%9F%B3%E4%B8%80%E6%97%B6/</url>
+    
+    <content type="html"><![CDATA[<h6 id="FOREWORD："><a href="#FOREWORD：" class="headerlink" title="FOREWORD："></a><em><strong>FOREWORD：</strong></em></h6><p>于2023年9月23日下午，前往木木美术馆<span id="more"></span></p><h3 id="抵达木木美术馆"><a href="#抵达木木美术馆" class="headerlink" title="抵达木木美术馆"></a>抵达木木美术馆</h3><center><img src="1.jpg" srcset="/img/loading.gif" lazyload width = "60%" /><img src="2.jpg" srcset="/img/loading.gif" lazyload width = "60%" /></center>]]></content>
+    
+    
+    <categories>
+      
+      <category>Travel</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>坂本龙一</tag>
+      
+    </tags>
     
   </entry>
   
