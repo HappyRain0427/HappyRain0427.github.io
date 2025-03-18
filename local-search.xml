@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>Love Diary</title>
-    <link href="/2025/03/18/LOVE/"/>
-    <url>/2025/03/18/LOVE/</url>
-    
-    <content type="html"><![CDATA[<h6 id="FOREWORD："><a href="#FOREWORD：" class="headerlink" title="FOREWORD："></a><em><strong>FOREWORD：</strong></em></h6><p>纪念日记录<span id="more"></span></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Diary</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>love</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>咸宁温泉滑雪</title>
     <link href="/2025/01/06/%E5%92%B8%E5%AE%81/"/>
     <url>/2025/01/06/%E5%92%B8%E5%AE%81/</url>
@@ -210,19 +185,6 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2024/02/06/hello-world/"/>
-    <url>/2024/02/06/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>闪击成都</title>
     <link href="/2023/09/24/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/"/>
     <url>/2023/09/24/%E9%97%AA%E5%87%BB%E6%88%90%E9%83%BD/</url>
@@ -230,10 +192,18 @@
     <content type="html"><![CDATA[<h6 id="FOREWORD："><a href="#FOREWORD：" class="headerlink" title="FOREWORD："></a><em><strong>FOREWORD：</strong></em></h6><p>2023年9月22日晚由武汉飞往成都，开启闪击成都旅程</p><span id="more"></span><h3 id="起飞"><a href="#起飞" class="headerlink" title="起飞"></a>起飞</h3><center><img src="登机1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="航班信息2.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><p><em>好看的飞机内饰</em></p><center><img src="飞机内饰.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="舷窗1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="航班信息1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><p><em>飞机上的快乐时光</em></p><center><img src="飞机合照.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="飞机饮料.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><p><em>没有网只能看这个</em></p><center><img src="飞行数据.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="抵达"><a href="#抵达" class="headerlink" title="抵达"></a>抵达</h3><p><em>飞了两小时终于到啦</em></p><center><img src="舷窗2.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="晚上在机场旁的民宿住"><a href="#晚上在机场旁的民宿住" class="headerlink" title="晚上在机场旁的民宿住"></a>晚上在机场旁的民宿住</h3><p><em>第二天坐上机场的地铁去城区（像高铁一样的地铁）</em></p><center><img src="机场地铁.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="半天没吃饭，先吃火锅"><a href="#半天没吃饭，先吃火锅" class="headerlink" title="半天没吃饭，先吃火锅"></a>半天没吃饭，先吃火锅</h3><center><img src="火锅1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="人民广场看展——《坂本龍一-一音一時》"><a href="#人民广场看展——《坂本龍一-一音一時》" class="headerlink" title="人民广场看展——《坂本龍一|一音一時》"></a>人民广场看展——《坂本龍一|一音一時》</h3><center><img src="美术馆对面公园.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="封面1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="晚上去太古里"><a href="#晚上去太古里" class="headerlink" title="晚上去太古里"></a>晚上去太古里</h3><center><img src="太古里熊猫.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里Switch.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里包带熊猫.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里合照.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里可爱鞋.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里外景.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里遗迹.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="太古里熊猫.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><h3 id="第三天上午去看大熊猫"><a href="#第三天上午去看大熊猫" class="headerlink" title="第三天上午去看大熊猫"></a>第三天上午去看大熊猫</h3><p><em>赶中午的火车，一个半小时逛完熊猫园</em></p><center><img src="熊猫园区入口.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><center><img src="小熊猫1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="小熊猫2.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><center><img src="熊猫1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫2.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫3.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫4.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><center><img src="熊猫园1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center><center><img src="熊猫园照片1.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫园照片2.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫园照片3.jpg" srcset="/img/loading.gif" lazyload width = 80%" /><img src="熊猫园照片4.jpg" srcset="/img/loading.gif" lazyload width = 80%" /></center>]]></content>
     
     
+    <categories>
+      
+      <category>Travel</category>
+      
+    </categories>
+    
     
     <tags>
       
       <tag>成都</tag>
+      
+      <tag>熊猫</tag>
       
     </tags>
     
@@ -259,6 +229,31 @@
     <tags>
       
       <tag>坂本龍一</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Love Diary</title>
+    <link href="/2022/06/20/LOVE/"/>
+    <url>/2022/06/20/LOVE/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1000-day"><a href="#1000-day" class="headerlink" title="1000-day"></a>1000-day</h3><center><img src=".jpg" srcset="/img/loading.gif" lazyload width = "80%" /></center>]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>love</tag>
       
     </tags>
     
