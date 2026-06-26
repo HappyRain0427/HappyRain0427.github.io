@@ -359,11 +359,13 @@ body.places-map-modal-open {
 
 .places-card-meta {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   color: var(--places-muted);
   font-size: 0.86rem;
   font-weight: 700;
+  line-height: 1.45;
 }
 
 .places-card h3 {
