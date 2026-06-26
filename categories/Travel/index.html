@@ -60,7 +60,10 @@
 
 
   
+<link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/cats.css">
+<link rel="stylesheet" href="/css/places.css">
 
 
 
@@ -122,11 +125,39 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/posts/" target="_self">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-articles"></i>
                 <span>记录</span>
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/posts/" target="_self">
+                    <i class="iconfont icon-articles"></i>
+                    <span>全部记录</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/places/" target="_self">
+                    <i class="iconfont icon-map"></i>
+                    <span>足迹</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/cats/" target="_self">
+                    <i class="iconfont icon-love"></i>
+                    <span>胖宝宝</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -251,9 +282,18 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 7 篇文章</p>
+  <p class="h4">共计 8 篇文章</p>
   <hr>
   
+  
+    
+      
+      <p class="h5">2026</p>
+    
+    <a href="/2026/02/06/%E2%80%9C%E5%BC%80%E5%B0%81-%E6%B4%9B%E9%98%B3%E2%80%9D/" class="list-group-item list-group-item-action">
+      <time>02-06</time>
+      <div class="list-group-item-title">“开封-洛阳”</div>
+    </a>
   
     
       
@@ -432,6 +472,11 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
+
+
+  
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/places-map.js"></script>
 
 
 

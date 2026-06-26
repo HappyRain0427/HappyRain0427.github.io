@@ -60,7 +60,10 @@
 
 
   
+<link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/cats.css">
+<link rel="stylesheet" href="/css/places.css">
 
 
 
@@ -122,11 +125,39 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/posts/" target="_self">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-articles"></i>
                 <span>记录</span>
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/posts/" target="_self">
+                    <i class="iconfont icon-articles"></i>
+                    <span>全部记录</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/places/" target="_self">
+                    <i class="iconfont icon-map"></i>
+                    <span>足迹</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/cats/" target="_self">
+                    <i class="iconfont icon-love"></i>
+                    <span>胖宝宝</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -398,6 +429,11 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
+
+
+  
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/places-map.js"></script>
 
 
 

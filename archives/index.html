@@ -60,7 +60,10 @@
 
 
   
+<link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/cats.css">
+<link rel="stylesheet" href="/css/places.css">
 
 
 
@@ -122,11 +125,39 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/posts/" target="_self">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-articles"></i>
                 <span>记录</span>
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/posts/" target="_self">
+                    <i class="iconfont icon-articles"></i>
+                    <span>全部记录</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/places/" target="_self">
+                    <i class="iconfont icon-map"></i>
+                    <span>足迹</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/cats/" target="_self">
+                    <i class="iconfont icon-love"></i>
+                    <span>胖宝宝</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -259,9 +290,14 @@
     
     <p class="h5">
       <a href="/categories/Travel/">Travel</a>
-      <span class="list-group-count">(7)</span>
+      <span class="list-group-count">(8)</span>
     </p>
 
+    
+      <a href="/2026/02/06/%E2%80%9C%E5%BC%80%E5%B0%81-%E6%B4%9B%E9%98%B3%E2%80%9D/" class="list-group-item list-group-item-action">
+        <time>2026-02-06</time>
+        <div class="list-group-item-title">“开封-洛阳”</div>
+      </a>
     
       <a href="/2025/06/01/%E5%8C%97%E4%BA%AC/" class="list-group-item list-group-item-action">
         <time>2025-06-01</time>
@@ -319,19 +355,6 @@
   
     
     <p class="h5">
-      <a href="/categories/Life/">Life</a>
-      <span class="list-group-count">(1)</span>
-    </p>
-
-    
-      <a href="/2024/02/13/%E6%B0%B8%E8%BE%89%E8%B6%85%E5%B8%82/" class="list-group-item list-group-item-action">
-        <time>2024-02-13</time>
-        <div class="list-group-item-title">永辉超市</div>
-      </a>
-    
-  
-    
-    <p class="h5">
       <a href="/categories/%E8%83%96%E5%AE%9D%E5%AE%9D/">胖宝宝</a>
       <span class="list-group-count">(1)</span>
     </p>
@@ -343,19 +366,20 @@
       </a>
     
   
-
-  
+    
     <p class="h5">
-      uncategorized
+      <a href="/categories/Life/">Life</a>
       <span class="list-group-count">(1)</span>
     </p>
 
     
-      <a href="/2026/02/06/%E2%80%9C%E5%BC%80%E5%B0%81-%E6%B4%9B%E9%98%B3%E2%80%9D/" class="list-group-item list-group-item-action">
-        <time>2026-02-06</time>
-        <div class="list-group-item-title">“开封-洛阳”</div>
+      <a href="/2024/02/13/%E6%B0%B8%E8%BE%89%E8%B6%85%E5%B8%82/" class="list-group-item list-group-item-action">
+        <time>2024-02-13</time>
+        <div class="list-group-item-title">永辉超市</div>
       </a>
     
+  
+
   
 </div>
 
@@ -480,6 +504,11 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
+
+
+  
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/places-map.js"></script>
 
 
 
