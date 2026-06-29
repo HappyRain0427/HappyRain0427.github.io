@@ -173,6 +173,13 @@ body.places-map-modal-open {
   overflow: hidden;
 }
 
+body.places-map-modal-open #navbar {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(-100%) !important;
+}
+
 .places-map-modal-backdrop {
   position: absolute;
   inset: 0;
@@ -492,13 +499,6 @@ body.places-map-modal-open {
 }
 
 @media (max-width: 576px) {
-  body.places-map-modal-open #navbar {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateY(-100%) !important;
-  }
-
   .places-shell {
     width: min(100% - 20px, 1120px);
     padding-top: 1.3rem;

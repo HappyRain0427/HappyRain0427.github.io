@@ -373,48 +373,71 @@
   font-size: 0.82rem;
 }
 
-.cats-timeline {
-  position: relative;
+.cats-moments-grid {
   display: grid;
-  gap: 0.8rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
 }
 
-.cats-timeline-item {
-  display: grid;
-  grid-template-columns: 6.8rem minmax(0, 1fr);
-  gap: 0.9rem;
-  align-items: center;
-  padding: 0.75rem;
+.cats-moment-card {
+  overflow: hidden;
   background: var(--cats-surface-soft);
   border: 1px solid var(--cats-border);
   border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(31, 49, 68, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.cats-timeline-item img {
+.cats-moment-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 106, 141, 0.28);
+  box-shadow: var(--cats-hover-shadow);
+}
+
+.cats-moment-card img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   background: var(--cats-image-bg);
-  border-radius: 8px;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.cats-timeline-item time {
-  color: var(--cats-subtle);
-  font-size: 0.78rem;
-  font-weight: 700;
+.cats-moment-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.04);
 }
 
-.cats-timeline-item h3 {
-  margin: 0.2rem 0 0.25rem;
+.cats-moment-body {
+  padding: 0.85rem;
+}
+
+.cats-moment-body h3 {
+  margin: 0 0 0.35rem;
   color: var(--cats-heading);
   font-size: 1.05rem;
   font-weight: 700;
 }
 
-.cats-timeline-item p {
+.cats-moment-body p {
   margin: 0;
   color: var(--cats-muted);
-  line-height: 1.55;
+  line-height: 1.6;
+}
+
+.cats-moment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.cats-moment-tags span {
+  padding: 0.18rem 0.48rem;
+  color: var(--cats-blue);
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: rgba(106, 134, 184, 0.1);
+  border-radius: 999px;
 }
 
 .cats-note {
@@ -446,6 +469,7 @@
 }
 
 [data-user-color-scheme="dark"] .cats-tags span,
+[data-user-color-scheme="dark"] .cats-moment-tags span,
 [data-user-color-scheme="dark"] .cats-random-button {
   color: var(--cats-subtle);
   background: rgba(196, 198, 201, 0.07);
@@ -481,6 +505,7 @@
   }
 
   :root:not([data-user-color-scheme]) .cats-tags span,
+  :root:not([data-user-color-scheme]) .cats-moment-tags span,
   :root:not([data-user-color-scheme]) .cats-random-button {
     color: var(--cats-subtle);
     background: rgba(196, 198, 201, 0.07);
@@ -506,12 +531,19 @@
   .cats-gallery-group {
     grid-template-columns: 1fr;
   }
+
+  .cats-moments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 767px) {
   .cats-random-photo,
-  .cats-post-item,
-  .cats-timeline-item {
+  .cats-post-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cats-moments-grid {
     grid-template-columns: 1fr;
   }
 
