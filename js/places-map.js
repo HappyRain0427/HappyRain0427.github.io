@@ -446,6 +446,15 @@
 
   function bindChartEvents(context) {
     context.chart.on('click', function (params) {
+      if (context.role === 'main') {
+        if (params.data && params.data.visited) {
+          showProvince(params.data.provinceId);
+          return;
+        }
+        showModalMain();
+        return;
+      }
+
       if (params.seriesType === 'scatter' && params.data && params.data.cityId) {
         scrollToCity(params.data.cityId);
         return;
@@ -453,6 +462,14 @@
       if (!params.data || !params.data.visited) return;
       showProvince(params.data.provinceId);
     });
+
+    if (context.role === 'main') {
+      context.chart.getZr().on('click', function (event) {
+        if (!event.target) {
+          showModalMain();
+        }
+      });
+    }
   }
 
   function currentContextFromControl(control) {

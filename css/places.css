@@ -102,7 +102,6 @@
 }
 
 .places-map-toolbar button,
-.places-map-close,
 .places-province-city button {
   min-height: 2.25rem;
   border: 1px solid var(--places-border);
@@ -121,7 +120,6 @@
 }
 
 .places-map-toolbar button:hover,
-.places-map-close:hover,
 .places-province-city button:hover {
   border-color: rgba(108, 132, 171, 0.32);
   background: var(--link-hover-bg-color);
@@ -141,6 +139,10 @@
 .places-map:not(.places-map--modal) {
   aspect-ratio: 1000 / 620;
   min-height: 420px;
+}
+
+.places-map--clickable {
+  cursor: zoom-in;
 }
 
 .places-echarts-map {
@@ -203,20 +205,18 @@ body.places-map-modal-open {
 
 .places-map-modal-header h2 {
   margin: 0;
-  color: var(--places-heading);
+  color: rgba(246, 249, 255, 0.96);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.28);
 }
 
 .places-map-modal-subtitle {
   margin: 0.35rem 0 0;
-  color: var(--places-muted);
+  color: rgba(236, 242, 250, 0.86);
   line-height: 1.5;
 }
 
-.places-map-close {
-  flex: 0 0 auto;
-  min-width: 2.25rem;
-  padding: 0;
-  font-size: 1.3rem;
+.places-map-modal-header .places-kicker {
+  color: rgba(218, 226, 238, 0.78);
 }
 
 .places-modal-content {

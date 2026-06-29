@@ -1,0 +1,106 @@
+.cv-page .cv-actions button.btn {
+  color: rgb(47.2, 124.8, 148.8);
+  background: transparent;
+}
+
+@media print {
+  @page {
+    margin: 14mm 12mm;
+  }
+
+  html,
+  body.cv-page {
+    background: #fff !important;
+    font-size: 11pt !important;
+  }
+
+  .cv-page .masthead,
+  .cv-page .skip-links,
+  .cv-page .sidebar,
+  .cv-page .page__footer,
+  .cv-page .cv-actions,
+  .cv-page .no-print {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  .cv-page #main,
+  .cv-page .page,
+  .cv-page .page__inner-wrap {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cv-page .page__title {
+    margin: 0 0 8pt !important;
+    font-size: 20pt !important;
+    line-height: 1.15 !important;
+  }
+
+  .cv-page .page__content {
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .cv-page .cv-lead {
+    max-width: none !important;
+    margin-bottom: 10pt !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .cv-page .page__content h2 {
+    margin: 12pt 0 6pt !important;
+    padding-bottom: 2pt !important;
+    border-bottom: .5pt solid #999 !important;
+    font-size: 13pt !important;
+  }
+
+  .cv-page .page__content h3 {
+    font-size: 10.5pt !important;
+  }
+
+  .cv-entry,
+  .cv-info-grid > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-entry {
+    margin-bottom: 8pt !important;
+  }
+
+  .cv-entry__header {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+  }
+
+  .cv-entry p {
+    margin: 0 0 3pt !important;
+  }
+
+  .cv-entry ul {
+    margin: 3pt 0 0 1.1em !important;
+    padding-left: 1em !important;
+  }
+
+  .cv-entry li {
+    margin-bottom: 2pt !important;
+  }
+
+  .cv-info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5pt !important;
+  }
+
+  .cv-info-grid > div {
+    padding: 5pt !important;
+    border: .5pt solid #ccc !important;
+    background: #fff !important;
+  }
+}
