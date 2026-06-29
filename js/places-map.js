@@ -376,7 +376,7 @@
   }
 
   function renderPanelEmpty() {
-    provincePanel.innerHTML = '<p class="places-panel-empty">点击一个高亮省份后，这里会显示城市和文章。</p>';
+    provincePanel.innerHTML = '<p class="places-panel-empty">选择一个省份，查看那里的城市和记录。</p>';
   }
 
   function cityPostLinks(city) {
@@ -412,7 +412,7 @@
     }
     modalKicker.textContent = 'Travel Map';
     modalTitle.textContent = '足迹地图';
-    modalSubtitle.textContent = '点击高亮省份查看省内城市。';
+    modalSubtitle.textContent = '选择点亮的省份，看看那里的城市足迹。';
     backButton.hidden = true;
   }
 

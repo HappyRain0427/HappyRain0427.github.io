@@ -254,6 +254,19 @@ body.places-map-modal-open #navbar {
   line-height: 1.7;
 }
 
+.places-map-modal .places-province-panel {
+  background: rgba(246, 249, 255, 0.86);
+}
+
+.places-map-modal .places-panel-empty {
+  color: rgba(31, 38, 52, 0.88);
+}
+
+.places-map-modal .places-map-source {
+  color: rgba(246, 249, 255, 0.84);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.32);
+}
+
 .places-province-heading {
   display: flex;
   align-items: center;
@@ -452,6 +465,15 @@ body.places-map-modal-open #navbar {
   background: rgba(20, 31, 48, 0.38);
 }
 
+[data-user-color-scheme="dark"] .places-map-modal .places-province-panel {
+  background: rgba(31, 49, 68, 0.78);
+}
+
+[data-user-color-scheme="dark"] .places-map-modal .places-panel-empty,
+[data-user-color-scheme="dark"] .places-map-modal .places-map-source {
+  color: rgba(236, 242, 250, 0.86);
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-user-color-scheme]) .places-shell {
     --places-surface: rgba(31, 49, 68, 0.74);
@@ -477,6 +499,15 @@ body.places-map-modal-open #navbar {
 
   :root:not([data-user-color-scheme]) .places-province-panel {
     background: rgba(20, 31, 48, 0.38);
+  }
+
+  :root:not([data-user-color-scheme]) .places-map-modal .places-province-panel {
+    background: rgba(31, 49, 68, 0.78);
+  }
+
+  :root:not([data-user-color-scheme]) .places-map-modal .places-panel-empty,
+  :root:not([data-user-color-scheme]) .places-map-modal .places-map-source {
+    color: rgba(236, 242, 250, 0.86);
   }
 }
 
