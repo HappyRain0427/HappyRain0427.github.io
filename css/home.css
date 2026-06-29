@@ -77,6 +77,31 @@
   color: var(--home-muted-text);
 }
 
+.home-profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.home-profile-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.8rem;
+  padding: 0 0.65rem;
+  color: var(--home-muted-text);
+  background: var(--home-icon-bg);
+  border: 1px solid var(--home-icon-border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.home-profile-stats strong {
+  color: var(--post-heading-color);
+}
+
 .home-entry-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -343,6 +368,26 @@
   font-weight: 700;
 }
 
+.home-post-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.home-post-terms span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.45rem;
+  padding: 0 0.48rem;
+  color: var(--home-subtle-text);
+  background: var(--home-icon-bg);
+  border: 1px solid var(--home-icon-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .home-post-body h3 {
   margin: 0.4rem 0 0.45rem;
   color: var(--post-heading-color);
@@ -392,6 +437,7 @@
 [data-user-color-scheme="dark"] .home-profile-copy h1,
 [data-user-color-scheme="dark"] .home-section-heading h2,
 [data-user-color-scheme="dark"] .home-entry-card strong,
+[data-user-color-scheme="dark"] .home-profile-stats strong,
 [data-user-color-scheme="dark"] .home-post-body h3 {
   color: #e0e3e8;
 }
@@ -401,6 +447,8 @@
 [data-user-color-scheme="dark"] .home-entry-icon,
 [data-user-color-scheme="dark"] .home-entry-meta,
 [data-user-color-scheme="dark"] .home-entry-links em,
+[data-user-color-scheme="dark"] .home-profile-stats span,
+[data-user-color-scheme="dark"] .home-post-terms span,
 [data-user-color-scheme="dark"] .home-text-link,
 [data-user-color-scheme="dark"] .home-text-link:hover,
 [data-user-color-scheme="dark"] .home-post-body time {
@@ -452,6 +500,7 @@
   :root:not([data-user-color-scheme]) .home-profile-copy h1,
   :root:not([data-user-color-scheme]) .home-section-heading h2,
   :root:not([data-user-color-scheme]) .home-entry-card strong,
+  :root:not([data-user-color-scheme]) .home-profile-stats strong,
   :root:not([data-user-color-scheme]) .home-post-body h3 {
     color: #e0e3e8;
   }
@@ -461,6 +510,8 @@
   :root:not([data-user-color-scheme]) .home-entry-icon,
   :root:not([data-user-color-scheme]) .home-entry-meta,
   :root:not([data-user-color-scheme]) .home-entry-links em,
+  :root:not([data-user-color-scheme]) .home-profile-stats span,
+  :root:not([data-user-color-scheme]) .home-post-terms span,
   :root:not([data-user-color-scheme]) .home-text-link,
   :root:not([data-user-color-scheme]) .home-text-link:hover,
   :root:not([data-user-color-scheme]) .home-post-body time {
