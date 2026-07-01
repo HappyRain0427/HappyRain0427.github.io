@@ -81,8 +81,11 @@
   var cities = payload.cities || [];
   var provinceById = {};
   var citiesById = {};
-  var mapGeoJson = null;
+  var mainGeoJson = null;
+  var provinceGeoJsonCache = {};
+  var provinceGeoJsonPromises = {};
   var provinceMapRegistered = {};
+  var provinceDetailBaseUrl = payload.provinceDetailBaseUrl || '/data/maps/provinces/';
 
   provinces.forEach(function (province) {
     province.id = String(province.id);
@@ -144,7 +147,7 @@
   }
 
   function mainMapData() {
-    return (mapGeoJson.features || []).map(function (feature) {
+    return (mainGeoJson.features || []).map(function (feature) {
       var props = feature.properties || {};
       var provinceId = provinceIdOfFeature(feature);
       var province = provinceById[provinceId];
@@ -214,12 +217,7 @@
   }
 
   function makeProvinceGeoJson(provinceId) {
-    return {
-      type: 'FeatureCollection',
-      features: (mapGeoJson.features || []).filter(function (feature) {
-        return provinceIdOfFeature(feature) === provinceId;
-      })
-    };
+    return provinceGeoJsonCache[provinceId] || { type: 'FeatureCollection', features: [] };
   }
 
   function registerProvinceMap(provinceId) {
@@ -229,6 +227,53 @@
       provinceMapRegistered[mapName] = true;
     }
     return mapName;
+  }
+
+  function provinceDetailUrl(provinceId) {
+    var base = provinceDetailBaseUrl;
+    if (base.charAt(base.length - 1) !== '/') base += '/';
+    return base + provinceId + '.geojson';
+  }
+
+  function loadProvinceGeoJson(provinceId) {
+    if (provinceGeoJsonCache[provinceId]) {
+      return Promise.resolve(provinceGeoJsonCache[provinceId]);
+    }
+    if (provinceGeoJsonPromises[provinceId]) {
+      return provinceGeoJsonPromises[provinceId];
+    }
+    provinceGeoJsonPromises[provinceId] = fetch(provinceDetailUrl(provinceId))
+      .then(function (response) {
+        if (!response.ok) throw new Error('Province GeoJSON request failed');
+        return response.json();
+      })
+      .then(function (geoJson) {
+        provinceGeoJsonCache[provinceId] = geoJson;
+        return geoJson;
+      })
+      .catch(function (error) {
+        delete provinceGeoJsonPromises[provinceId];
+        throw error;
+      });
+    return provinceGeoJsonPromises[provinceId];
+  }
+
+  function preloadProvinceDetails() {
+    var ids = provinces.map(function (province) {
+      return province.id;
+    });
+    var preload = function () {
+      ids.forEach(function (provinceId, index) {
+        window.setTimeout(function () {
+          loadProvinceGeoJson(provinceId).catch(function () {});
+        }, index * 120);
+      });
+    };
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(preload, { timeout: 1800 });
+      return;
+    }
+    window.setTimeout(preload, 300);
   }
 
   function provinceScatterData(province) {
@@ -241,6 +286,67 @@
         value: [Number(city.coord[0]), Number(city.coord[1]), 1],
         summary: city.summary || '',
         posts: city.posts || []
+      };
+    });
+  }
+
+  function uniqueValues(values) {
+    var seen = {};
+    return values.filter(function (value) {
+      if (!value || seen[value]) return false;
+      seen[value] = true;
+      return true;
+    });
+  }
+
+  function provinceFeatureNames(provinceId) {
+    var geoJson = provinceGeoJsonCache[provinceId] || {};
+    return (geoJson.features || []).map(function (feature) {
+      return feature && feature.properties ? feature.properties.name : '';
+    }).filter(Boolean);
+  }
+
+  function cityRegionCandidates(city) {
+    return uniqueValues([
+      city.mapName,
+      city.name,
+      city.name ? city.name + '市' : ''
+    ]);
+  }
+
+  function provinceVisitedRegions(province, palette) {
+    var featureNames = provinceFeatureNames(province.id);
+    var featureNameMap = {};
+    featureNames.forEach(function (name) {
+      featureNameMap[name] = true;
+    });
+
+    var matchedNames = [];
+    (province.cities || []).forEach(function (city) {
+      var candidates = cityRegionCandidates(city);
+      var matched = candidates.find(function (name) {
+        return featureNameMap[name];
+      });
+      if (matched) matchedNames.push(matched);
+    });
+
+    if (!matchedNames.length && (province.cities || []).length) {
+      matchedNames = featureNames;
+    }
+
+    return uniqueValues(matchedNames).map(function (name) {
+      return {
+        name: name,
+        itemStyle: {
+          areaColor: palette.visited,
+          borderColor: palette.border,
+          borderWidth: 1
+        },
+        emphasis: {
+          itemStyle: {
+            areaColor: palette.visitedHover
+          }
+        }
       };
     });
   }
@@ -269,6 +375,7 @@
         zoom: context.zoom,
         scaleLimit: { min: 0.8, max: 10 },
         label: { show: false },
+        regions: provinceVisitedRegions(province, palette),
         itemStyle: {
           areaColor: palette.area,
           borderColor: palette.border,
@@ -340,6 +447,21 @@
     this.chart.setOption(makeProvinceOption(this, provinceId), true);
   };
 
+  ChartContext.prototype.showLoading = function (text) {
+    var palette = colors();
+    this.chart.clear();
+    this.chart.showLoading('default', {
+      text: text || '正在准备地图...',
+      color: palette.accent,
+      textColor: palette.text,
+      maskColor: 'rgba(255, 255, 255, 0)'
+    });
+  };
+
+  ChartContext.prototype.hideLoading = function () {
+    this.chart.hideLoading();
+  };
+
   ChartContext.prototype.zoomBy = function (factor) {
     this.zoom = Math.max(0.8, Math.min(10, this.zoom * factor));
     if (this.mode === 'province') {
@@ -359,6 +481,7 @@
 
   var mainContext = new ChartContext('main', mainMapEl);
   var modalContext = new ChartContext('modal', modalMapEl);
+  var provinceRequestToken = 0;
 
   function openModal() {
     if (!modal) return;
@@ -417,6 +540,7 @@
   }
 
   function showModalMain() {
+    provinceRequestToken += 1;
     openModal();
     updateModalHeader('main');
     renderPanelEmpty();
@@ -426,10 +550,24 @@
   function showProvince(provinceId) {
     var province = provinceById[provinceId];
     if (!province) return;
+    var requestToken = provinceRequestToken + 1;
+    provinceRequestToken = requestToken;
     openModal();
     updateModalHeader('province', province);
     renderProvincePanel(province);
-    modalContext.renderProvince(provinceId);
+    modalContext.showLoading('正在准备省内地图...');
+    loadProvinceGeoJson(provinceId)
+      .then(function () {
+        if (requestToken !== provinceRequestToken) return;
+        modalContext.hideLoading();
+        modalContext.renderProvince(provinceId);
+      })
+      .catch(function () {
+        if (requestToken !== provinceRequestToken) return;
+        modalContext.hideLoading();
+        modalContext.chart.clear();
+        modalMapEl.textContent = '省份地图加载失败';
+      });
   }
 
   function scrollToCity(cityId) {
@@ -516,13 +654,15 @@
   });
 
   function rerenderCurrent() {
-    if (!mapGeoJson) return;
-    mainContext.mode === 'province' && mainContext.provinceId
-      ? mainContext.renderProvince(mainContext.provinceId)
-      : mainContext.renderMain();
-    modalContext.mode === 'province' && modalContext.provinceId
-      ? modalContext.renderProvince(modalContext.provinceId)
-      : modalContext.renderMain();
+    if (!mainGeoJson) return;
+    mainContext.renderMain();
+    if (modalContext.mode === 'province' && modalContext.provinceId) {
+      if (provinceGeoJsonCache[modalContext.provinceId]) {
+        modalContext.renderProvince(modalContext.provinceId);
+      }
+      return;
+    }
+    modalContext.renderMain();
   }
 
   function resizeCharts() {
@@ -545,18 +685,19 @@
     });
   }
 
-  fetch(payload.geojsonUrl)
+  fetch(payload.chinaProvinceGeojsonUrl || payload.geojsonUrl)
     .then(function (response) {
       if (!response.ok) throw new Error('GeoJSON request failed');
       return response.json();
     })
     .then(function (geoJson) {
-      mapGeoJson = geoJson;
-      window.echarts.registerMap(CHINA_MAP, mapGeoJson);
+      mainGeoJson = geoJson;
+      window.echarts.registerMap(CHINA_MAP, mainGeoJson);
       mainContext.renderMain();
       modalContext.renderMain();
       bindChartEvents(mainContext);
       bindChartEvents(modalContext);
+      preloadProvinceDetails();
     })
     .catch(function () {
       mainMapEl.textContent = '地图数据加载失败';
