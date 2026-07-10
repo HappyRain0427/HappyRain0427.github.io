@@ -380,6 +380,7 @@
 }
 
 .cats-moment-card {
+  scroll-margin-top: 5rem;
   overflow: hidden;
   background: var(--cats-surface-soft);
   border: 1px solid var(--cats-border);
