@@ -86,6 +86,7 @@
   var provinceGeoJsonPromises = {};
   var provinceMapRegistered = {};
   var provinceDetailBaseUrl = payload.provinceDetailBaseUrl || '/data/maps/provinces/';
+  var provinceDetailUrls = payload.provinceDetailUrls || {};
 
   provinces.forEach(function (province) {
     province.id = String(province.id);
@@ -230,6 +231,7 @@
   }
 
   function provinceDetailUrl(provinceId) {
+    if (provinceDetailUrls[provinceId]) return provinceDetailUrls[provinceId];
     var base = provinceDetailBaseUrl;
     if (base.charAt(base.length - 1) !== '/') base += '/';
     return base + provinceId + '.geojson';
