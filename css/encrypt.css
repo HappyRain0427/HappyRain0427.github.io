@@ -1,0 +1,406 @@
+#hexo-blog-encrypt.hbe-enhanced {
+  --hbe-muted: #6d819c;
+  --hbe-subtle: rgba(89, 107, 134, 0.8);
+  --hbe-panel-bg: rgba(255, 255, 255, 0.68);
+  --hbe-field-bg: rgba(255, 255, 255, 0.76);
+  --hbe-border: rgba(109, 129, 156, 0.18);
+  --hbe-field-border: rgba(109, 129, 156, 0.28);
+  margin: 2.2rem 0 2.6rem;
+}
+
+#hexo-blog-encrypt.hbe-enhanced,
+#hexo-blog-encrypt.hbe-enhanced * {
+  box-sizing: border-box;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-panel {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--hbe-border);
+  border-radius: 8px;
+  background: var(--hbe-panel-bg);
+  box-shadow: 0 16px 38px rgba(31, 49, 68, 0.065);
+  color: var(--post-text-color, #252c41);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-mark {
+  position: relative;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(135, 162, 228, 0.11);
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-mark::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 18px;
+  height: 17px;
+  border: 3px solid var(--link-hover-color, #87a2e4);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-mark::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 9px;
+  width: 22px;
+  height: 17px;
+  border-radius: 5px;
+  background: var(--link-hover-color, #87a2e4);
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--hbe-subtle);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-title {
+  margin: 0;
+  color: var(--post-heading-color, #1a202c);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-desc {
+  margin: 0.55rem 0 0;
+  color: var(--hbe-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-lock-controls {
+  margin-left: 58px;
+  text-align: left;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--post-heading-color, #1a202c);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 144px;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px;
+  min-width: 0;
+  min-height: 52px;
+  overflow: hidden;
+  border: 1px solid var(--hbe-field-border);
+  border-radius: 8px;
+  background: var(--hbe-field-bg);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-field:focus-within {
+  border-color: var(--link-hover-color, #87a2e4);
+  box-shadow: 0 0 0 3px rgba(135, 162, 228, 0.18);
+}
+
+#hexo-blog-encrypt.hbe-enhanced.is-error .hbe-password-field {
+  border-color: #d76a6a;
+  box-shadow: 0 0 0 3px rgba(215, 106, 106, 0.12);
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-input,
+#hexo-blog-encrypt.hbe-enhanced .hbe-input-field,
+#hexo-blog-encrypt.hbe-enhanced .hbe-input-field-default {
+  position: static;
+  display: block;
+  float: none;
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  margin: 0;
+  padding: 0 0.9rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--post-text-color, #252c41);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 52px;
+  opacity: 1;
+  z-index: auto;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-input::placeholder {
+  color: var(--hbe-muted);
+  opacity: 0.82;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle,
+#hexo-blog-encrypt.hbe-enhanced .hbe-unlock-button,
+#hexo-blog-encrypt.hbe-enhanced .hbe-button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle {
+  width: 52px;
+  min-width: 52px;
+  padding: 0;
+  border-left: 1px solid rgba(109, 129, 156, 0.2);
+  border-radius: 0;
+  background: transparent;
+  color: var(--hbe-muted);
+  font-size: 1.1rem;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle:hover,
+#hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle:focus-visible {
+  background: var(--link-hover-bg-color, #f8f9fa);
+  color: var(--link-hover-color, #87a2e4);
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-unlock-button {
+  width: 144px;
+  min-width: 144px;
+  height: 52px;
+  padding: 0 1rem;
+  background: var(--link-hover-color, #87a2e4);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-unlock-button:hover,
+#hexo-blog-encrypt.hbe-enhanced .hbe-unlock-button:focus-visible {
+  box-shadow: 0 10px 24px rgba(135, 162, 228, 0.26);
+  transform: translateY(-1px);
+}
+
+#hexo-blog-encrypt.hbe-enhanced.is-checking .hbe-unlock-button {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-status {
+  min-height: 1.3rem;
+  margin: 0.65rem 0 0;
+  color: var(--hbe-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-status.is-error {
+  color: #c55252;
+}
+
+#hexo-blog-encrypt.hbe-enhanced .hbe-status.is-success {
+  color: #3b8a5f;
+}
+
+#hexo-blog-encrypt .hbe-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#hexo-blog-encrypt .hbe-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  width: auto;
+  height: 48px;
+  margin: 1.5rem 0 0;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--button-hover-bg-color, #f2f3f5);
+  color: var(--post-text-color, #252c41);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-indent: 0;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+#hexo-blog-encrypt .hbe-button::after {
+  content: none;
+}
+
+#hexo-blog-encrypt .hbe-button:hover,
+#hexo-blog-encrypt .hbe-button:focus-visible {
+  background: var(--link-hover-bg-color, #f8f9fa);
+  color: var(--link-hover-color, #87a2e4);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced {
+  --hbe-muted: rgba(226, 232, 240, 0.76);
+  --hbe-subtle: rgba(226, 232, 240, 0.66);
+  --hbe-panel-bg: rgba(31, 49, 68, 0.58);
+  --hbe-field-bg: rgba(38, 57, 89, 0.48);
+  --hbe-border: rgba(196, 198, 201, 0.14);
+  --hbe-field-border: rgba(196, 198, 201, 0.18);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-lock-panel {
+  border-color: rgba(196, 198, 201, 0.14);
+  background: rgba(31, 49, 68, 0.58);
+  box-shadow: 0 22px 52px rgba(8, 14, 22, 0.18);
+  color: var(--post-text-color, #c4c6c9);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-lock-kicker,
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-lock-desc,
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-status {
+  color: rgba(226, 232, 240, 0.76);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-lock-title,
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-password-label,
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-password-input {
+  color: var(--post-heading-color, #c4c6c9);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-password-field {
+  border-color: rgba(196, 198, 201, 0.18);
+  background: rgba(38, 57, 89, 0.48);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle {
+  border-left-color: rgba(196, 198, 201, 0.14);
+  color: rgba(226, 232, 240, 0.72);
+}
+
+[data-user-color-scheme="dark"] #hexo-blog-encrypt .hbe-button {
+  background: rgba(196, 198, 201, 0.12);
+  color: var(--post-text-color, #c4c6c9);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced {
+    --hbe-muted: rgba(226, 232, 240, 0.76);
+    --hbe-subtle: rgba(226, 232, 240, 0.66);
+    --hbe-panel-bg: rgba(31, 49, 68, 0.58);
+    --hbe-field-bg: rgba(38, 57, 89, 0.48);
+    --hbe-border: rgba(196, 198, 201, 0.14);
+    --hbe-field-border: rgba(196, 198, 201, 0.18);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-lock-panel {
+    border-color: rgba(196, 198, 201, 0.14);
+    background: rgba(31, 49, 68, 0.58);
+    box-shadow: 0 22px 52px rgba(8, 14, 22, 0.18);
+    color: var(--post-text-color, #c4c6c9);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-lock-kicker,
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-lock-desc,
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-status {
+    color: rgba(226, 232, 240, 0.76);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-lock-title,
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-password-label,
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-password-input {
+    color: var(--post-heading-color, #c4c6c9);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-password-field {
+    border-color: rgba(196, 198, 201, 0.18);
+    background: rgba(38, 57, 89, 0.48);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt.hbe-enhanced .hbe-password-toggle {
+    border-left-color: rgba(196, 198, 201, 0.14);
+    color: rgba(226, 232, 240, 0.72);
+  }
+
+  :root:not([data-user-color-scheme]) #hexo-blog-encrypt .hbe-button {
+    background: rgba(196, 198, 201, 0.12);
+    color: var(--post-text-color, #c4c6c9);
+  }
+}
+
+@media (max-width: 640px) {
+  #hexo-blog-encrypt.hbe-enhanced {
+    margin: 1.6rem 0 2rem;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-lock-panel {
+    padding: 1.35rem;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-lock-header {
+    gap: 0.8rem;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-lock-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-lock-title {
+    font-size: 1.38rem;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-lock-controls {
+    margin-left: 0;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-password-row {
+    grid-template-columns: 1fr;
+  }
+
+  #hexo-blog-encrypt.hbe-enhanced .hbe-unlock-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
